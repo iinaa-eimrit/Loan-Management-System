@@ -8,6 +8,7 @@
     "build": "tsc",
     "start": "node dist/server.js",
     "seed": "tsx src/seed.ts",
+    "test:e2e": "tsx src/e2e-test.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
