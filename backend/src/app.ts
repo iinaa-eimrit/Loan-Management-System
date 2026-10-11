@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import { errorHandler } from './middleware/errorHandler';
 
 import { authRouter } from './routes/auth.routes';
+import { borrowerRouter } from './routes/borrower.routes';
 
 export const app = express();
 
@@ -20,6 +21,7 @@ app.get('/api/health', (_req, res) => {
 });
 
 app.use('/api/auth', authRouter);
+app.use('/api/borrower', borrowerRouter);
 
 // Routes get mounted here in later phases
 
