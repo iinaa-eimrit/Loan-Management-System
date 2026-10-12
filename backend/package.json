@@ -12,6 +12,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cookie-parser": "^1.4.8",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.10.7",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.4.7",
@@ -20,16 +26,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.9.5",
     "multer": "^1.4.5-lts.1",
-    "zod": "^3.24.1"
-  },
-  "devDependencies": {
-    "@types/bcryptjs": "^2.4.6",
-    "@types/cookie-parser": "^1.4.8",
-    "@types/express": "^5.0.0",
-    "@types/jsonwebtoken": "^9.0.7",
-    "@types/multer": "^1.4.12",
-    "@types/node": "^22.10.7",
     "tsx": "^4.19.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "zod": "^3.24.1"
   }
 }

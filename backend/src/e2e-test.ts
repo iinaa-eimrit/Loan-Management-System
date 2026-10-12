@@ -101,7 +101,7 @@ async function run() {
   if (brePass.status !== 200) throw new Error('BRE pass failed');
 
   // Upload salary slip
-  const slipPath = path.resolve(__dirname, '../sample-slip.pdf');
+  const slipPath = path.resolve(process.cwd(), 'sample-slip.pdf');
   const fileBytes = fs.readFileSync(slipPath);
   const formData = new FormData();
   formData.append('salarySlip', new Blob([fileBytes], { type: 'application/pdf' }), 'sample-slip.pdf');

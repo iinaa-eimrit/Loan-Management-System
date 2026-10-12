@@ -1,13 +1,15 @@
+import dns from 'node:dns';
 import mongoose from 'mongoose';
 import { env } from './env';
 
-export async function connectDB(): Promise<void> {
-  // strictQuery: filters with unknown fields are dropped rather than silently
-  // matching everything. Protects against typos like { stauts: 'APPLIED' }.
-  mongoose.set('strictQuery', true);
+try {
+  dns.setServers(['8.8.8.8', '1.1.1.1']);
+} catch {
+  // Ignore if not supported
+}
 
-  // mongoose.connect returns once the initial connection succeeds.
-  // If it fails (wrong URI, Mongo down), it throws and server.ts exits.
+export async function connectDB(): Promise<void> {
+  mongoose.set('strictQuery', true);
   await mongoose.connect(env.MONGO_URI);
   console.log(`[db] connected to ${mongoose.connection.name}`);
 }
